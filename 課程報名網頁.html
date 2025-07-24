@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025/9/13 AI教育訓練課程報名表</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#F59E0B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .input-focus:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+        }
+        
+        .bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.33); }
+            80%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen py-8">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <!-- 標題區域 -->
+        <div class="text-center mb-8 bounce-in">
+            <!-- 公司Logo -->
+            <div class="mb-6">
+                <img src="https://drive.google.com/uc?export=view&id=1go4Ecn_jdrOD5QvohXL2UxF-lmrD6dLk" 
+                     alt="公司Logo" 
+                     class="mx-auto h-16 md:h-20 object-contain card-shadow rounded-lg bg-white p-2"
+                     onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
+            </div>
+            <!-- Logo備用方案 -->
+            <div id="logoFallback" class="mb-6" style="display: none;">
+                <div class="mx-auto h-16 md:h-20 bg-white rounded-lg card-shadow flex items-center justify-center px-6">
+                    <span class="text-2xl md:text-3xl font-bold text-gray-700">公司LOGO</span>
+                </div>
+            </div>
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-4 card-shadow">
+                <span class="text-4xl">🤖</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-2">AI教育訓練課程</h1>
+            <p class="text-xl text-blue-100 mb-4">2025年9月13日 報名表</p>
+            
+            <!-- 報名人數顯示 -->
+            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-white">
+                <span class="w-3 h-3 bg-secondary rounded-full mr-2 pulse-ring"></span>
+                目前報名：<span id="currentCount" class="font-bold mx-1">0</span>/<span class="font-bold">52</span> 人
+            </div>
+        </div>
+
+        <!-- 課程資訊卡片 -->
+        <div class="bg-white rounded-2xl p-6 mb-6 card-shadow">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <span class="text-2xl mr-2">📚</span>課程資訊
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4 text-gray-600 mb-6">
+                <div class="flex items-center">
+                    <span class="text-xl mr-2">📅</span>
+                    <div>
+                        <p class="font-semibold">開課日期</p>
+                        <p>2025年9月16日 (六)</p>
+                        <p class="text-sm text-gray-500">09:00 - 17:00</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <span class "text-xl mr-2">📍</span>
+                    <div>
+                        <p class="font-semibold">上課地點</p>
+                        <p>台北教育大學</p>
+                        <p class="text-sm">台北市大安區和平東路二段134號</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 課程內容 -->
+            <div class="border-t pt-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <span class="text-lg mr-2">🎯</span>課程內容
+                </h3>
+                
+                <div class="space-y-4">
+                    <!-- 上午課程 -->
+                    <div class="bg-blue-50 rounded-xl p-4">
+                        <h4 class="font-semibold text-blue-800 mb-2 flex items-center">
+                            <span class="mr-2">🌅</span>上午場 (09:00-12:00)
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2 mt-1">•</span>
+                                <div>
+                                    <strong>AI基礎概念與發展趨勢</strong>
+                                    <p class="text-gray-600">了解人工智慧的基本原理、發展歷程與未來趨勢</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2 mt-1">•</span>
+                                <div>
+                                    <strong>ChatGPT與生成式AI應用</strong>
+                                    <p class="text-gray-600">實際操作ChatGPT、學習提示工程技巧</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2 mt-1">•</span>
+                                <div>
+                                    <strong>AI工具在教育領域的應用</strong>
+                                    <p class="text-gray-600">探討AI如何協助教學設計、評量與個人化學習</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 下午課程 -->
+                    <div class="bg-green-50 rounded-xl p-4">
+                        <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                            <span class="mr-2">🌞</span>下午場 (13:30-17:00)
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">•</span>
+                                <div>
+                                    <strong>實作工作坊：AI輔助教材製作</strong>
+                                    <p class="text-gray-600">使用AI工具製作教學簡報、測驗題目與學習單</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">•</span>
+                                <div>
+                                    <strong>AI倫理與教育應用注意事項</strong>
+                                    <p class="text-gray-600">討論AI使用的倫理考量與教育現場的實際應用</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2 mt-1">•</span>
+                                <div>
+                                    <strong>分組討論與成果分享</strong>
+                                    <p class="text-gray-600">小組實作成果展示與經驗交流</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 講師資訊 -->
+                <div class="mt-6 bg-purple-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-purple-800 mb-3 flex items-center">
+                        <span class="mr-2">👨‍🏫</span>講師介紹
+                    </h4>
+                    <div class="text-sm text-gray-700">
+                        <p class="mb-2"><strong>王教授</strong> - 台灣大學資訊工程系教授</p>
+                        <p class="mb-2"><strong>李博士</strong> - AI教育應用專家、前Google AI研究員</p>
+                        <p><strong>陳老師</strong> - 國小資訊教育推動教師、AI教學實務專家</p>
+                    </div>
+                </div>
+
+                <!-- 課程特色 -->
+                <div class="mt-6 bg-yellow-50 rounded-xl p-4">
+                    <h4 class="font-semibold text-yellow-800 mb-3 flex items-center">
+                        <span class="mr-2">⭐</span>課程特色
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✓</span>
+                            理論與實務並重
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✓</span>
+                            提供課程錄影回放
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✓</span>
+                            小班制互動教學
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✓</span>
+                            課後線上討論群組
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✓</span>
+                            提供實作範例檔案
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✓</span>
+                            結業證書認證
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 報名表單 -->
+        <div class="bg-white rounded-2xl p-8 card-shadow">
+            <form id="registrationForm" class="space-y-6">
+                <div class="text-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800 flex items-center justify-center">
+                        <span class="text-2xl mr-2">✍️</span>報名資訊
+                    </h2>
+                </div>
+
+                <!-- e -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <span class="text-red-500">*</span> 姓名
+                    </label>
+                    <input type="text" id="name" name="name" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 input-focus"
+                           placeholder="請輸入您的姓名">
+                </div>
+
+                <!-- 工號 -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <span class="text-red-500">*</span> 工號
+                    </label>
+                    <input type="text" id="employeeId" name="employeeId" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 input-focus"
+                           placeholder="請輸入您的工號">
+                </div>
+
+                <!-- 部門 -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <span class="text-red-500">*</span> 部門
+                    </label>
+                    <input type="text" id="department" name="department" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 input-focus"
+                           placeholder="請輸入您的部門">
+                </div>
+
+                <!-- 聯絡電話 -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        <span class="text-red-500">*</span> 聯絡電話 (手機)
+                    </label>
+                    <input type="tel" id="phone" name="phone" required
+                           class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 input-focus"
+                           placeholder="請輸入您的手機號碼"
+                           pattern="[0-9]{10}">
+                </div>
+
+                <!-- 午餐選擇 -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-3">
+                        <span class="text-red-500">*</span> 午餐選擇
+                    </label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="lunch" value="葷食" required class="sr-only">
+                            <div class="lunch-option flex items-center px-6 py-3 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:border-primary">
+                                <span class="text-2xl mr-2">🍖</span>
+                                <span class="font-medium">葷食</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="lunch" value="素食" required class="sr-only">
+                            <div class="lunch-option flex items-center px-6 py-3 border-2 border-gray-200 rounded-xl transition-all duration-300 hover:border-primary">
+                                <span class="text-2xl mr-2">🥗</span>
+                                <span class="font-medium">素食</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 特殊需求 -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">特殊需求或備註</label>
+                    <textarea id="notes" name="notes" rows="3"
+                              class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-all duration-300 input-focus resize-none"
+                              placeholder="如有過敏、輪椅通道需求或其他特殊需求，請在此說明"></textarea>
+                </div>
+
+                <!-- 提交按鈕 -->
+                <div class="pt-4">
+                    <button type="submit" id="submitBtn"
+                            class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-8 rounded-xl hover:from-primary/90 hover:to-secondary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                        <span class="text-xl mr-2">🚀</span>
+                        立即報名
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 報名截止提醒 -->
+        <div class="text-center mt-6 text-white/80">
+            <p class="text-sm">⏰ 報名截止日期：2025年9月15日</p>
+            <p class="text-xs mt-1">名額有限，報名從速！</p>
+        </div>
+    </div>
+
+    <!-- 成功提示模態框 -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 mx-4 max-w-md w-full card-shadow bounce-in">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-4xl">✅</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">報名成功！</h3>
+                <p class="text-gray-600 mb-6">感謝您的報名，我們會盡快與您聯繫確認相關事宜。</p>
+                <button onclick="closeModal()" 
+                        class="bg-secondary text-white px-8 py-3 rounded-xl hover:bg-secondary/90 transition-colors duration-300 font-semibold">
+                    確定
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Google Apps Script Web App URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwg_1AqIaKbHczlKEz1B5TVIjDCsg1_UtjjbnK1S0WTj4NIhnYSiZNRcnnjfswJlnATjA/exec';
+        
+        let currentRegistrations = 0;
+        const maxRegistrations = 52;
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCurrentCount();
+            setupRadioButtons();
+            setupForm();
+        });
+
+        // 設定單選按鈕樣式
+        function setupRadioButtons() {
+            document.querySelectorAll('input[name="lunch"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    document.querySelectorAll('.lunch-option').forEach(option => {
+                        option.classList.remove('border-primary', 'bg-primary/10');
+                        option.classList.add('border-gray-200');
+                    });
+                    if (this.checked) {
+                        this.parentElement.querySelector('.lunch-option').classList.add('border-primary', 'bg-primary/10');
+                        this.parentElement.querySelector('.lunch-option').classList.remove('border-gray-200');
+                    }
+                });
+            });
+        }
+
+        // 載入目前報名人數
+        async function loadCurrentCount() {
+            try {
+                const response = await fetch(`${SCRIPT_URL}?action=getCount`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentRegistrations = data.count;
+                } else {
+                    currentRegistrations = 0;
+                }
+            } catch (error) {
+                console.log('讀取報名人數失敗，使用本地儲存:', error);
+                const savedCount = localStorage.getItem('registrationCount');
+                currentRegistrations = savedCount ? parseInt(savedCount) : 0;
+            }
+            
+            document.getElementById('currentCount').textContent = currentRegistrations;
+            
+            if (currentRegistrations >= maxRegistrations) {
+                document.getElementById('submitBtn').disabled = true;
+                document.getElementById('submitBtn').innerHTML = '<span class="text-xl mr-2">😔</span>報名已額滿';
+                document.getElementById('submitBtn').classList.add('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        // 寫入Google Sheets
+        async function writeToGoogleSheets(formData) {
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                
+                if (!result.success) {
+                    throw new Error(result.error || '寫入失敗');
+                }
+
+                console.log('成功寫入Google Sheets:', result);
+                return true;
+            } catch (error) {
+                console.error('寫入Google Sheets失敗:', error);
+                return false;
+            }
+        }
+
+        // 設定表單提交
+        function setupForm() {
+            document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (currentRegistrations >= maxRegistrations) {
+                    alert('很抱歉，報名已額滿！');
+                    return;
+                }
+
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.innerHTML;
+                
+                // 顯示載入狀態
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="text-xl mr-2">⏳</span>報名中...';
+                
+                // 收集表單數據
+                const formData = {
+                    timestamp: new Date().toLocaleString('zh-TW'),
+                    name: document.getElementById('name').value,
+                    employeeId: document.getElementById('employeeId').value,
+                    department: document.getElementById('department').value,
+                    phone: document.getElementById('phone').value,
+                    lunch: document.querySelector('input[name="lunch"]:checked').value,
+                    notes: document.getElementById('notes').value || '無'
+                };
+
+                try {
+                    // 寫入Google Sheets
+                    const success = await writeToGoogleSheets(formData);
+                    
+                    if (success) {
+                        // 更新報名人數
+                        currentRegistrations++;
+                        localStorage.setItem('registrationCount', currentRegistrations.toString());
+                        document.getElementById('currentCount').textContent = currentRegistrations;
+                        
+                        // 重置表單
+                        this.reset();
+                        setupRadioButtons();
+                        
+                        // 顯示成功訊息
+                        showSuccessModal();
+                        
+                        console.log('報名成功！資料已寫入Google Sheets');
+                    } else {
+                        throw new Error('寫入失敗');
+                    }
+                } catch (error) {
+                    console.error('報名失敗:', error);
+                    alert('報名失敗，請稍後再試或聯繫管理員。');
+                }
+                
+                // 恢復按鈕狀態
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                
+                // 檢查是否額滿
+                if (currentRegistrations >= maxRegistrations) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="text-xl mr-2">😔</span>報名已額滿';
+                    submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+            });
+        }
+
+        // 顯示成功模態框
+        function showSuccessModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // 關閉模態框
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // 電話號碼格式驗證
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+            e.target.value = value;
+        });
+
+        // 表單驗證提示
+        document.querySelectorAll('input[required]').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.classList.add('border-red-400');
+                } else {
+                    this.classList.remove('border-red-400');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
